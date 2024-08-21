@@ -1,0 +1,46 @@
+title: "Jackson's Tech World"
+name: Jackson R
+description: Exploring Tech
+author: "Jackson R"
+
+markdown: kramdown
+highlighter: rouge
+logo: false
+baseurl: "" 
+url: "https://spi3ex.github.io"
+permalink: /:slugified_categories/:year/:y_day/:title
+#google_analytics: "UA-XXXXXXXX-X"
+plugins: [jekyll-paginate-v2, jekyll-feed]
+pagination: 
+  enabled: true
+  per_page: 5 
+  sort_reverse: true
+autopages:
+  enabled: true
+  # Category pages, omit entire config element to disable
+  categories: 
+    # Optional, the list of layouts that should be processed for every category found in the site
+    layouts: 
+      - 'paginate_layout.html'
+    # Optional, the title that each category paginate page should get (:cat is replaced by the Category name)
+    title: 'Posts in category :cat'
+    # Optional, the permalink for the  pagination page (:cat is replaced), 
+    # the pagination permalink path is then appended to this permalink structure
+    permalink: '/category/:cat'
+    # Optional, when true logging related to category pages will be supressed.
+    silent: false
+    slugify:
+      mode: 'default'   # :cat is slugified. Modes: default, raw, pretty, ascii, latin
+      case: false       # Whether to replace all uppercase letters with their lowercase counterparts
+  collections:
+     layouts: 
+      - 'paginate_layout.html'
+  tags:
+     layouts: 
+      - 'paginate_layout.html'
+
+feed:
+  path: feed/index.xml
+
+# Disqus config
+disqus-shortname: ""
