@@ -1,0 +1,67 @@
+Jackson R
+Willing to Relocate: yes
+www.linkedin.com/in/spi3ex/
+Contact: +918508331955
+Mail: hellojackson.r@gmail.com
+————————————————————————————————————————
+About Me:
+A Technology Enthusiast of Open-Source Software and passion to explore and work in
+Silicon, R&D System Software and Hardware development, skilled in C, C++, Java
+English: CEFR B2(499/600) | Typing Speed: 53WPM(by typing.com)
+
+Software/ Hardware Skills:
+Programming : C/C++[Linkedin Badge], Java, Cmake Build System
+OS: Posix RTOS, System Services, Android HAL and Linux Device Drivers, Assembly
+Tools : Shell Utilities, Bash, Vim, Docker, Python3, Git, Jira, Gerrit, Repo
+Experience:
+Embedded Software Engineer / Engineer - Full time.
+Mar 2023 to Present
+L&T Technology Services Limited
+Chennai, India
+Developed Android TV Devices Platform Software on Broadcom ARM V8a Boards,
+Worked on Firmware, HAL to Core services and apps. AOSP Integration,SE Linux, TR369
+Remote Management, Build, Release.
+Software Developer/Software Engineer - Full time.
+June 2021 to Mar 2023
+Capgemini
+Chennai, India
+Development of C++ Platform Apps, Java MicroServices for Secure Transactions on Time
+Constrained deliverables with Strict deadlines and Building, Deploying, Staging in
+Production. Member of CGMTC, Club 98, Toastmasters International.
+Associate Research Analyst- Full time
+Jan 2021 to Mar 2021
+Capestart
+Nagercoil, India
+Provided risk analysis for decision Making to Clients and Reduced the time for Project by 1
+Hour with Effective multitasking.
+Embedded Software Engineer - Freelance.
+Mar 2020 to Dec 2020
+OS Community
+Remote
+Mentored College Students and developed Embedded IoT Projects using ESP32 BLE and
+AWS, Worked on RTOS Products with Open-Source Community on Discord, Slack.
+Engineer Intern
+Nov 2018 to Dec 2018
+Gulf Acrylic LLC
+Sohar, Oman
+Worked on Quality Check and Maintenance activities on Electrical drives, Pneumatic
+systems of Sheet Extrusion Machinery designed by OMIPA, Italy.
+Open-Source Contributions:
+Apache-Nuttx RTOS - Simulator X11 Window support for macOS
+LVGL Graphics - CPP Bindings [WIP]
+Retro NES Emulators - SDL2 Window Management
+
+Github.com/spi3ex
+
+Courses and Certifications:
+• Agile Software Development - University of Minnesota
+• Open Source Software Development, Linux and Git Specialization
+Professional Qualification:
+Master of Engineering in Electrical and Electronics Engineering
+(Graduation: September 2020) Grade: 8.2
+Ponjesly College of Engineering Nagercoil. Anna University Chennai.
+Bachelor of Engineering in Electrical and Electronics Engineering
+(Graduation: April 2018) Grade: 7.12
+Ponjesly College of Engineering Nagercoil. Anna University Chennai.
+
+

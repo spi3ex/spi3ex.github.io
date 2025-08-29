@@ -8,7 +8,53 @@
 	display:inline;
 }
 
-/* Enhanced styling for modern look */
+/* Header call-to-action buttons */
+.header-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        text-decoration: none;
+    }
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    
+    &:hover {
+        background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        color: white;
+    }
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    
+    &:hover {
+        background: white;
+        color: #333;
+    }
+}
+
+/* Enhanced navigation */
 .main-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;

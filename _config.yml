@@ -1,18 +1,18 @@
 title: "Jackson's Tech World"
 name: "Jackson's Tech World"
-description: "A deep dive into systems programming, C++, and performance optimization. Exploring the foundations of computing one post at a time."
-tagline: "Exploring Tech, One Algorithm at a Time"
+description: "Embedded Systems, Android Platform Development, and Open-Source Contributions. Exploring low-level programming and system software development."
+tagline: "Embedded Systems & Platform Software Engineer"
 author: "Jackson R"
-email: "contact@jacksonstechworld.dev"
+email: "hellojackson.r@gmail.com"
 
 # SEO and metadata
-meta_description: "Jackson R's technical blog covering systems programming, C++, performance optimization, and low-level computing concepts."
-keywords: "C++, systems programming, performance optimization, assembly, algorithms, software engineering"
+meta_description: "Jackson R's technical blog covering embedded systems, Android platform development, C/C++ programming, and open-source contributions. Currently working as Embedded Software Engineer at L&T Technology Services."
+keywords: "embedded systems, Android platform, C++, C programming, AOSP, device drivers, RTOS, system software, open source"
 
 # Social links
 github_username: spi3ex
-twitter_username: # Add if you have one
-linkedin_username: # Add if you have one
+linkedin_username: spi3ex
+# twitter_username: # Add if you have one
 
 # Build settings
 markdown: kramdown

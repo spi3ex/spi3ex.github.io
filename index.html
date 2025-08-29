@@ -5,26 +5,24 @@ cover: false
 about: 'about.html'
 ---
 
-<header class="main-header no-cover" {% unless paginator.page == 1 %} style="height: 20%" {% endunless %}>
-    <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-        <a class="subscribe-button icon-feed" href="{{'/feed.xml' | relative_url }} " title="Subscribe to RSS Feed">Subscribe</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if page.about %} <a href='{{page.about | relative_url}}'> About me </a> {% endif %}
-            </h2>
+    <header class="main-header {% if page.cover %}has-cover{% endif %}" style="background-image: url({{ page.cover | prepend: site.baseurl }})">
+        <nav class="main-nav overlay clearfix">
+            <a class="blog-logo" href="{{ site.baseurl }}">
+                <img src="{{ site.baseurl }}/assets/images/profile.png" alt="Blog Logo">
+            </a>
+        </nav>
+        <div class="vertical">
+            <div class="main-header-content inner">
+                <h1 class="page-title">{{ site.name }}</h1>
+                <h2 class="page-description">{{ site.description }}</h2>
+                <div class="header-cta">
+                    <a href="{{ site.baseurl }}/about" class="btn btn-primary">About Me</a>
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="btn btn-secondary" target="_blank">Connect on LinkedIn</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+        <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    </header>
 
 <main id="content" class="content" role="main">
     <!-- Pagination (top) -->
