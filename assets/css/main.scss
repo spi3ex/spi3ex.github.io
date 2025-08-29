@@ -3,6 +3,21 @@
 # Change this file for any custom CSS.
 ---
 
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Global typography improvements */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
 	display:inline;
@@ -10,56 +25,93 @@
 
 /* Header call-to-action buttons */
 .header-cta {
-    margin-top: 30px;
+    margin-top: 2.5rem;
     text-align: center;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    min-width: 140px;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.6s;
+    }
+    
+    &:hover::before {
+        left: 100%;
+    }
     
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         text-decoration: none;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
     }
 }
 
 .btn-primary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
     
     &:hover {
         background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
         color: white;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
     }
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
     
     &:hover {
-        background: white;
-        color: #333;
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+        color: white;
+        backdrop-filter: blur(15px);
     }
 }
 
 /* Enhanced navigation */
 .main-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-header::before {
@@ -69,27 +121,76 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="2"/></g></svg>');
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.main-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
     z-index: 1;
 }
 
 .main-header-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
 }
 
 .page-title {
-    font-size: 3.2em;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    margin-bottom: 0.2em;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 0.5em;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
 }
 
 .page-description {
-    font-size: 1.4em;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.95;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-bottom: 0.8em;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 0.5em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Add a subtle animation to the header */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.main-header-content {
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Enhanced post styling */
@@ -160,30 +261,60 @@
 
 /* Navigation improvements */
 .main-nav {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-}
-
-.subscribe-button {
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    color: white;
-    text-decoration: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 2rem;
+    z-index: 10;
     transition: all 0.3s ease;
 }
 
+.main-nav.scrolled {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(25px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.blog-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.blog-logo img:hover {
+    border-color: rgba(255,255,255,0.6);
+    transform: scale(1.05);
+}
+
+.subscribe-button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 14px;
+    backdrop-filter: blur(10px);
+}
+
 .subscribe-button:hover {
-    background: rgba(255,255,255,0.3);
-    transform: translateY(-1px);
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255,255,255,0.1);
 }
 
 /* Code block enhancements */
 pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
     background: #2d3748;
     border-radius: 8px;
     padding: 1.5rem;
@@ -193,6 +324,7 @@ pre {
 }
 
 code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
     background: #f7fafc;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
@@ -254,11 +386,13 @@ pre code {
 /* Responsive improvements */
 @media (max-width: 768px) {
     .page-title {
-        font-size: 2.5em;
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .page-description {
-        font-size: 1.2em;
+        font-size: 1.1rem;
+        padding: 0 1rem;
     }
     
     .post {
@@ -271,6 +405,68 @@ pre code {
         align-items: flex-start;
         gap: 0.5rem;
     }
+    
+    .header-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 2rem;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .main-nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    .main-header-content {
+        padding: 0 1rem;
+    }
+}
+
+/* Scroll indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 24px;
+    animation: bounce 2s infinite;
+    transition: color 0.3s ease;
+    z-index: 5;
+}
+
+.scroll-down:hover {
+    color: white;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Enhanced scroll indicator with modern design */
+.scroll-down::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
 }
 
 /* Tag styling */
